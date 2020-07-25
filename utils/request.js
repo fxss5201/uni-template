@@ -30,7 +30,7 @@ export function request(options) {
               icon: 'none'
             })
             // 此处再根据code统一做一些相关处理，比如登录过期等操作
-            if(res.data.code === 402003) {
+            if(res.data.code === config.loginExpiredCode) {
               // 删除本地Storage的token
               uni.removeStorageSync(config.token)
               // uni.showToast 默认显示 1500ms ，之后跳转到登录页面
@@ -88,7 +88,7 @@ export function upload(options) {
               title: res.msg,
               icon: 'none'
             })
-            if(res.code === 402003) {
+            if(res.code === config.loginExpiredCode) {
               uni.removeStorageSync(config.token)
               setTimeout(() => {
                 uni.reLaunch({
