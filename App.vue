@@ -2,6 +2,19 @@
 export default {
 	onLaunch: function() {
 		console.log('App Launch');
+		uni.onNetworkStatusChange(({isConnected}) => {
+      if (isConnected) {
+        uni.hideToast()
+      } else {
+        uni.hideToast()
+        uni.showToast({
+          title: '您已断网',
+          icon: 'none',
+          mask: true,
+          duration: 6000000
+        })
+      }
+    })
 	},
 	onShow: function() {
 		console.log('App Show');
