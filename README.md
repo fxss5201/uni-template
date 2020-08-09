@@ -35,4 +35,6 @@ git clone https://github.com/vueBlog/blog-uni.git
 12. mixins：混入
 13. utils：工具
 14. config：配置文件
+    1. index.js：类似于vue.config.js
+    2. theme.js：配置在js中使用的主题配置
 15. sitemap.json：配置页面是否被索引
