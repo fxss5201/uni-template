@@ -1,6 +1,6 @@
-# 博客-uni
+# uni-template
 
-本项目使用 [uni-app](https://uniapp.dcloud.io/) 进行开发。
+uni-template: uni-app项目模板，实现各种基础功能
 
 ## 项目下载和运行
 
