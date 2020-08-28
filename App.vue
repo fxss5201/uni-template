@@ -1,8 +1,16 @@
 <script>
+import config from './config/index'
 import theme from './config/theme'
 export default {
 	onLaunch: function() {
-		console.log('App Launch');
+    // 在此处判断本地token是否存在，决定是否跳转到登录页面
+    // 需要注意的是首页加载就调用的一些接口需要加上token判断，有的时候才发送请求
+    // if (!uni.getStorageSync(config.token)) {
+    //   uni.redirectTo({
+    //     url: ''
+    //   })
+    // }
+    
     // 网络监控
 		uni.onNetworkStatusChange(({isConnected}) => {
       if (isConnected) {
