@@ -7,7 +7,7 @@
 - 拉取项目代码
 
 ```bash
-git clone https://github.com/vueBlog/blog-uni.git
+git clone https://github.com/fxss5201/uni-template.git
 ```
 
 - 运行
