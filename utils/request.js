@@ -2,7 +2,7 @@
 // 使用方式：
 // this.$request({
 //   url: '',
-//   type: 1, // 可选参数，用于设置使用项目中 config/index.js 中配置的哪个origin，值为对应的数字
+//   origin: 1, // 可选参数，用于设置使用项目中 config/index.js 中配置的哪个origin，值为对应的数字，未设置则使用默认的 origin
 //   method: 'POST',
 //   data: {}
 // }).then(res => {
@@ -16,8 +16,8 @@ import config from '../config'
 
 export function request(options) {
   let origin
-  if (typeof options.type === 'number' && !isNaN(options.type)) {
-    origin = config[`origin${options.type}`]
+  if (typeof options.origin === 'number' && !isNaN(options.origin)) {
+    origin = config[`origin${options.origin}`]
   } else {
     origin = config.origin
   }
@@ -84,8 +84,8 @@ export function request(options) {
 
 export function upload(options) {
   let origin
-  if (typeof options.type === 'number' && !isNaN(options.type)) {
-    origin = config[`origin${options.type}`]
+  if (typeof options.origin === 'number' && !isNaN(options.origin)) {
+    origin = config[`origin${options.origin}`]
   } else {
     origin = config.origin
   }
