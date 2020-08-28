@@ -4,7 +4,7 @@
  * uni.showModal({
  *   title: '提示的标题',
  *   content: '提示的内容',
- *   confirmColor: theme.uniColorPrimary,
+ *   confirmColor: theme.showModalConfirmColor,
  *   success: function (res) {
  *     if (res.confirm) {
  *       console.log('用户点击确定')
@@ -14,8 +14,11 @@
  *   }
  * })
  */
+
 const uniColorPrimary = '#007aff'
+const uniTextColorGrey = '#999'
 
 export default {
-  uniColorPrimary
+  showModalConfirmColor: uniColorPrimary,
+  showModalCancelColor: uniTextColorGrey
 }
