@@ -1,11 +1,29 @@
 // uni.request 和 uni.uploadFile 方法封装
+// 使用方式：
+// this.$request({
+//   url: '',
+//   type: 1, // 可选参数，用于设置使用项目中 config/index.js 中配置的哪个origin，值为对应的数字
+//   method: 'POST',
+//   data: {}
+// }).then(res => {
+//   console.log(res)
+// }).catch(err => {
+//   console.log(err)
+// }).finally(_ => {})
+
 import store from '../store'
 import config from '../config'
 
 export function request(options) {
+  let origin
+  if (typeof options.type === 'number' && !isNaN(options.type)) {
+    origin = config[`origin${options.type}`]
+  } else {
+    origin = config.origin
+  }
   return new Promise((resolve, reject) => {
     uni.request({
-      url: `${config.publicPath}${options.url}`, // 统一配置域名信息
+      url: `${origin}${options.url}`, // 统一配置域名信息
       method: options.method,
       header: options.header || {
         'content-type': 'application/json',
@@ -48,6 +66,8 @@ export function request(options) {
             title: `网络出错: ${res.statusCode}`,
             icon: 'none'
           })
+          reject(res.data)
+          console.log(`网络出错：${res.data.path} -> ${res.data.status}`)
         }
       },
       fail(err) {
@@ -63,9 +83,15 @@ export function request(options) {
 }
 
 export function upload(options) {
+  let origin
+  if (typeof options.type === 'number' && !isNaN(options.type)) {
+    origin = config[`origin${options.type}`]
+  } else {
+    origin = config.origin
+  }
   return new Promise((resolve, reject) => {
     uni.uploadFile({
-      url: `${config.publicPath}${options.url}`,
+      url: `${origin}${options.url}`,
       filePath: options.filePath,
       name: options.name,
       formData: options.formData || {},
@@ -103,6 +129,8 @@ export function upload(options) {
             title: `网络出错: ${result.statusCode}`,
             icon: 'none'
           })
+          reject(res.data)
+          console.log(`网络出错：${res.data.path} -> ${res.data.status}`)
         }
       },
       fail(err) {
