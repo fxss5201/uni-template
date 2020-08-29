@@ -1,0 +1,23 @@
+{
+  "name": "uni-template",
+  "version": "1.0.0",
+  "description": "uni-template: uni-app项目模板，实现各种基础功能",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxss5201/uni-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fxss5201/uni-template/issues"
+  },
+  "homepage": "https://github.com/fxss5201/uni-template#readme",
+  "dependencies": {
+    "dayjs": "^1.8.34"
+  }
+}
