@@ -1,6 +1,6 @@
 {
-    "name" : "blog-uni",
-    "appid" : "__UNI__1274B16",
+    "name" : "uni-template",
+    "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -42,7 +42,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "wx37221203f0e69f50",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,

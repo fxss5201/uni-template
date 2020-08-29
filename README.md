@@ -38,3 +38,5 @@ git clone https://github.com/fxss5201/uni-template.git
     1. index.js：类似于vue.config.js
     2. theme.js：配置在js中使用的主题配置
 15. sitemap.json：配置页面是否被索引
+16. package.json：npm相关，直接安装对应的库，和web一样引入使用
+17. package-lock.json：npm相关
