@@ -129,8 +129,8 @@ export function upload(options) {
             title: `网络出错: ${result.statusCode}`,
             icon: 'none'
           })
-          reject(res.data)
-          console.log(`网络出错：${res.data.path} -> ${res.data.status}`)
+          reject(result.data)
+          console.log(`网络出错：${result.data.path} -> ${result.data.status}`)
         }
       },
       fail(err) {
